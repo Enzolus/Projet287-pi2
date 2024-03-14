@@ -1,0 +1,3 @@
+docker build -t mariadb:latest .
+
+docker run --name mariadb -e MYSQL_ROOT_PASSWORD=root -d mariadb:latest

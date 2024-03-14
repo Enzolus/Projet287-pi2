@@ -1,0 +1,151 @@
+/* Appliquer un style de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('ville.jpg') no-repeat center center fixed; /* Assurez-vous que le chemin vers l'image est correct */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style pour l'image d'arrière-plan */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('ville.jpg'); /* Remplacez par le chemin réel de l'image */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Place l'arrière-plan derrière le formulaire de connexion */
+}
+.login-container {
+  background-color: rgba(103, 58, 183, 0.9); /* Couleur de fond violet avec transparence */
+  /* ... autres styles ... */
+  position: relative; /* Assure que le formulaire apparaît au-dessus du fond */
+  z-index: 2;
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 20px; /* Espace en dessous du logo */
+}
+
+.logo {
+    max-width: 100%; /* S'assure que le logo s'adapte à son conteneur */
+    height: auto; /* Pour maintenir le ratio d'aspect */
+    /* Si le logo est un élément de bloc et que vous souhaitez le centrer horizontalement */
+    display: block; /* Rend l'image un élément de bloc */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10%;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+input[type='text'],
+input[type='password'],
+button {
+  width: 100%; /* Prend toute la largeur disponible */
+  padding: 10px; /* Espacement interne */
+  margin: 0.5em 0; /* Espacement vertical */
+  border: 1px solid #ccc; /* Bordure subtile */
+  border-radius: 4px; /* Bords arrondis */
+}
+
+button {
+  background-color: #673AB7; /* Couleur du bouton */
+  color: white; /* Texte du bouton blanc */
+  font-weight: bold; /* Texte du bouton en gras */
+  border: none; /* Aucune bordure */
+  cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+  margin-top: 1em; /* Espacement au-dessus du bouton */
+}
+
+a {
+  color: #000000; /* Couleur du lien */
+  text-decoration: none; /* Aucun soulignement */
+  margin-top: 1em; /* Espacement au-dessus du lien */
+}
+
+/* Pour 'Se souvenir de moi' */
+.remember-me {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.remember-me input {
+  margin-right: 5px;
+}
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  color: #ff0000;
+  /* Autres styles pour le message d'erreur */
+}
+
+.success-message {
+  color: #008000;
+  /* Autres styles pour le message de succès */
+}
+
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+    position: absolute;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .login-container {
+    width: 80%; /* Largeur plus grande sur PC */
+    max-width: 600px; /* Maximum sur PC */
+    padding: 40px; /* Plus d'espacement interne sur PC */
+    position: absolute;
+  }
+  
+}
+
+@media (min-width: 1024px) { /* Les écrans plus larges que 1024px */
+  .login-container {
+    width: 80%; /* Largeur plus grande sur PC */
+    max-width: 600px; /* Maximum sur PC */
+    padding: 40px; /* Plus d'espacement interne sur PC */
+    position: absolute;
+  }
+
+  .logo-container img {
+    width: 70%; /* Taille de logo ajustée pour les écrans plus larges */
+  }
+
+  .form-group input,
+  .form-group button {
+    padding: 15px; /* Plus grand padding pour les éléments de formulaire sur PC */
+    font-size: 1.2em; /* Taille de texte plus grande sur PC */
+  }
+
+  .form-group button {
+    margin-top: 2em; /* Plus d'espace au-dessus du bouton sur PC */
+  }
+  
+}

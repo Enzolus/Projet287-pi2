@@ -1,0 +1,171 @@
+/* Styles de base pour le body et html */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Conteneur principal du tableau de bord */
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* En-tête du tableau de bord */
+.header {
+    background-color: #673AB7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Conteneur pour ajouter un contact */
+.add-contact-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-contact-container button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.alertes-container {
+    background-color: #ffffff; /* Fond blanc pour contraster avec les alertes */
+    border-radius: 5px; /* Bords arrondis pour le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    margin-bottom: 20px; /* Espace sous le conteneur */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre subtile */
+}
+
+.alerte-item {
+    background-color: #f8f8f8; /* Fond légèrement gris pour chaque alerte */
+    border-left: 4px solid; /* Bordure gauche pour la couleur de statut */
+    padding: 10px 20px; /* Espacement intérieur */
+    margin-bottom: 10px; /* Espace entre les alertes */
+    display: flex; /* Utilisation de Flexbox */
+    align-items: center; /* Alignement vertical des éléments */
+    justify-content: space-between; /* Espace entre le texte et le bouton */
+}
+
+.alerte-item:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0; /* Séparateur entre les alertes */
+}
+
+/* Boutons d'action */
+.button {
+    padding: 8px 16px; /* Espacement intérieur du bouton */
+    font-size: 14px; /* Taille de police */
+    border-radius: 4px; /* Bords arrondis du bouton */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.button.vu {
+    background-color: #db1313; /* Vert pour les boutons Vu */
+    color: white; /* Texte blanc */
+}
+
+.button.vu:hover {
+    background-color: #388E3C; /* Vert foncé pour le survol */
+}
+
+/* Style pour les titres des sections */
+h3 {
+    color: #673AB7; /* Couleur pour les titres des sections */
+    margin-bottom: 15px; /* Espace sous le titre */
+}
+button {
+    background-color: #673AB7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #4CAF50;
+}
+
+/* Couleurs des statuts des alertes */
+.statut-en-cours {
+    border-color: #d9534f;
+    color: #d9534f;
+}
+
+.statut-resolu {
+    border-color: #5cb85c;
+    color: #5cb85c;
+}
+
+.statut-fausse-alerte {
+    border-color: #f0ad4e;
+    color: #f0ad4e;
+}
+
+/* Conteneur des contacts */
+.contacts-list {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+
+.footer {
+    background-color: #673AB7; /* ou toute autre couleur de votre choix */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+/* Media queries pour la réactivité */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .footer {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Adaptation à l'affichage mobile */
+@media (min-width: 600px) and (max-width: 840px) {
+    .footer {
+        padding: 2px;
+        font-size: 14px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
