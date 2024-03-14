@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bouton SOS</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        flex-direction: column;
+    }
+    .boitier-sos {
+        width: 400px; /* Largeur fixe du boîtier */
+        height: 400px; /* Hauteur égale à la largeur */
+        background-color: #2aa1d8; /* Couleur grise du boitier */
+        border-radius: 30px; /* Bords arrondis du boitier */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre du boitier */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px; /* Espace intérieur */
+    }
+    .titre-sos {
+        font-size: 50px;
+        margin-bottom: 20px; /* Espace entre le titre et le bouton */
+        color: #333; /* Couleur du texte du titre */
+        text-align: center;
+        font-weight: bold;
+    }
+    .bouton-sos {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; /* Bouton rond */
+        background-color: red; /* Couleur du bouton */
+        color: white; /* Couleur du texte du bouton */
+        font-size: 40px; /* Taille du texte du bouton */
+        border: none; /* Pas de bordure */
+        cursor: pointer; /* Curseur en forme de main */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bouton-sos:hover {
+        background-color: #e60000; /* Couleur au survol du bouton */
+    }
+    .bouton-sos:active {
+        background-color: #ff1a1a; /* Couleur quand le bouton est cliqué */
+    }
+</style>
+</head>
+<body>
+<div class="titre-sos">Bouton de Subina Suthan</div>
+<div class="boitier-sos">
+    <button class="bouton-sos" onclick="sosAlert()">SOS</button>
+</div>
+<script>
+    function sosAlert() {
+        const data = {
+            "id_bouton": "1906"
+        };
+
+        fetch('http://127.0.0.1:5001/sos', { // Assurez-vous que l'URL est correcte
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Réseau de réponse non ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Succès:', data);
+            alert('Alarme déclenchée !'); // Affiche une alerte JavaScript
+        })
+        .catch((error) => {
+            console.error('Erreur:', error);
+        });
+    }
+</script>
+
+
+</body>
+</html>
