@@ -14,7 +14,7 @@ Ce projet est développé par l'équipe 287 du Pi² . Le but de ce projet est de
 
 - **Version :** final
 - **Dernière mise à jour :** 14/03/2024
-- **Description :** Un conteneur Docker qui héberge notre API Python et le site utilisateur. Cette API est conçue pour recevoir des déclenchements du bouton de simulation et traiter ces événements en conséquence.
+- **Description :** Un conteneur Docker qui héberge notre API Javascript et le site utilisateur. Cette API est conçue pour recevoir des déclenchements du bouton de simulation et traiter ces événements en conséquence.
 
 ### Conteneur BDD MariaDB
 
@@ -38,3 +38,7 @@ Ce projet est développé par l'équipe 287 du Pi² . Le but de ce projet est de
 1. **Clonez le dépôt du projet :**
    ```bash
    git clone https://github.com/Enzolus/Projet287-pi2.git
+
+2. **Lancer le projet :**
+   ```bash
+   docker-compose up --build -d
