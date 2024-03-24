@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  app:
+    image: apibouton_hk
+    build:
+      context: ./Api_bouton
+    container_name: apibouton_hk
+    ports:
+      - "5001:5001"
+    networks:
+      - scrappy
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb_hk
+    build:
+      context: ./Conteneur_Bdd_Mariadb
+    container_name : mariadb_hk
+    environment:
+      MYSQL_ROOT_PASSWORD: Enzo2002*
+      MYSQL_DATABASE: hearandknow
+      MYSQL_USER: subina
+      MYSQL_PASSWORD: Boutonsos287*
+    ports:
+      - "3101:3306"
+    networks:
+      scrappy:
+        ipv4_address: 172.18.0.2
+
+  web:
+    image: hk
+    build:
+      context: ./Conteneur_Interface_Site_et_lien_bdd
+    container_name: hk
+    ports:
+      - "80:80"
+    networks:
+      - scrappy
+    depends_on:
+      - app
+
+networks:
+  scrappy:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

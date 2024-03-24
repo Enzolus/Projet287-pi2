@@ -7,7 +7,7 @@ $messageErreur = '';
 $messageSuccess = '';
 
 // Variables pour se connecter à la base de données
-$host = '192.168.1.36';  // L'hôte où se trouve la base de données
+$host = 'mariadb_hk';  // L'hôte où se trouve la base de données
 $dbname = 'hearandknow';  // Le nom de la base de données
 $user = 'subina';  // Le nom d'utilisateur pour se connecter
 $pass = 'Boutonsos287*';  // Le mot de passe pour se connecter

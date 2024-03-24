@@ -20,9 +20,11 @@ COPY docker-entrypoint-initdb.d/ /docker-entrypoint-initdb.d/
 # Assurer que le script est exécutable
 RUN chmod +x /docker-entrypoint-initdb.d/*.sh
 
+EXPOSE 3306
+
 # Bonnes pratiques de sécurité
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-  CMD mysqladmin ping -h localhost || exit 1
+  CMD mysqladmin ping -h localhost -u subina -p"$MYSQL_PASSWORD" || exit 1
 
 # Utiliser l'utilisateur non root fourni par l'image MariaDB
 USER mysql

@@ -3,13 +3,13 @@ session_start();
 
 // Vérification de la connexion de l'utilisateur
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit();
 }
 
 // Connexion à la base de données
 try {
-    $pdo = new PDO('mysql:host=192.168.1.36;dbname=hearandknow', 'subina', 'Boutonsos287*');
+    $pdo = new PDO('mysql:host=mariadb_hk;dbname=hearandknow', 'subina', 'Boutonsos287*');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Vérifier si l'ID du contact est fourni et récupérer les détails du contact

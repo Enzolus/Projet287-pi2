@@ -12,7 +12,7 @@ if (isset($_GET['id_contact'])) {
 
     // Connexion à la base de données
     try {
-        $pdo = new PDO("mysql:host=192.168.1.36;dbname=hearandknow", 'subina', 'Boutonsos287*');
+        $pdo = new PDO("mysql:host=mariadb_hk;dbname=hearandknow", 'subina', 'Boutonsos287*');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Supprimer le contact d'urgence
